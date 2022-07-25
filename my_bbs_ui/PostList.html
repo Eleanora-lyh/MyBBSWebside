@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <!-- elementui 依赖于 vue，所以先引入vue -->
+        <script src="./lib/vue.js"></script>
+        <script src="./lib/elementui.js"></script>
+        <link rel="stylesheet" href="./lib/elementui.css">
+    </head>
+
+    <body>
+        <div id="postList">
+            <div class="header">
+                <div class="not-login">
+                    <span>登录</span>
+                    <span>注册</span>
+                </div>
+            </div>
+            <div class="place-show">
+                <div class="navi"></div>
+                <div class="backgroup">
+                    <img src="./assets/images/mainPic.png" style="width: 98%;" alt="">
+                    <h2>《全面战三国，等你来战》</h2>
+                </div>
+            </div>
+            <div class="sent-post">
+                <el-button type="primary">发帖</el-button>
+            </div>
+            <div class="post-list">
+                <table>
+                    <thead>
+                        <tr>
+                            <td colspan="2">
+                                <span>全部主题</span>
+                                <span>最新</span>
+                                <span>热门</span>
+                                <span>热帖</span>
+                                <span>精华</span>
+                            </td>
+                            <td>作者</td>
+                            <td>回复/查看</td>
+                            <td>最后发表</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="width: 32px;padding-left: 5px;">
+                                <img src="./assets/images/folder_new.gif" alt="">
+                            </td>
+                            <td>
+                                <span><a class="post-type" href="javascript:;">[帖子种类]</a></span>
+                                <a href="./PostDetail.html">帖子标题</a>
+                            </td>
+                            <td style="width: 135px;">
+                                <!-- 使用段落标签使其每个占一行 -->
+                                <p>Ace</p>
+                                <p>2021-3-18 23:00</p>
+                            </td>
+                            <td style="width: 66px;">
+                                <p>996</p>
+                                <p>1007</p>
+                            </td>
+                            <td style="width: 120px;">
+                                <p>Taro</p>
+                                <p> 2021-3-18 23:01</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 32px;padding-left: 5px;">
+                                <img src="./assets/images/folder_new.gif" alt="">
+                            </td>
+                            <td>
+                                <span><a class="post-type" href="javascript:;">[帖子种类]</a></span>
+                                <a href="./PostDetail.html">帖子标题</a>
+                            </td>
+                            <td style="width: 135px;">
+                                <p>Ace</p>
+                                <p>2021-3-18 23:00</p>
+                            </td>
+                            <td style="width: 66px;">
+                                <p>996</p>
+                                <p>1007</p>
+                            </td>
+                            <td style="width: 120px;">
+                                <p>Taro</p>
+                                <p> 2021-3-18 23:01</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="post-page">
+                <el-pagination background layout="prev, pager, next" :page-size="30" :total="1000" ></el-pagination>
+            </div>
+        </div>
+
+    </body>
+    <script>
+        new Vue({
+            el: "#postList",
+            // data:{
+            //     userName:sessionStorage["username"]
+            // },
+            // methods: {
+            //     logout:function(){
+            //         localStorage.clear();
+            //         sessionStorage.clear();
+            //         this.userName = null;
+            //     }
+            // },
+        })
+    </script>
+    <style>
+        * {
+            /* 内外边距为0，使其贴边显示 */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .header {
+            /* 黑边框要显示100% */
+            width: 100%;
+            height: 36px;
+            background: #000;
+            line-height: 36px;
+            padding-right: 10px;
+            text-align: right;
+
+        }
+
+        .header .not-login span {
+            color: #fff;
+        }
+
+        .place-show {
+            /* 图片显示的大小也为98%，上下各空出20px，居中对齐，并边框框起来 */
+            width: 98%;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+        }
+
+        .place-show .navi {
+            /* 导航栏暂时空着一定的高度 */
+            height: 36px;
+        }
+
+        .place-show .backgroup {
+            /* 图片下面的《全面战三国，等你来战》外容器控制文字居中，显示98% */
+            text-align: center;
+            width: 98%;
+        }
+
+        .place-show .backgroup h2 {
+            /* 图片下面的《全面战三国，等你来战》文字上下左右各距离容器10px */
+            color: red;
+            margin: 10px 10px;
+        }
+
+        .sent-post{
+            /* 发帖按钮的容器显示宽度为98%，左右居中 */
+            width: 98%;
+            margin: auto;
+        }
+        .post-list {
+            /* 表格容器的显示宽度为98% 上下距离16px，左右居中，除最后一行都使用外边框 */
+            width: 98%;
+            margin: 16px auto;
+            border: 1px solid #ccc;
+            border-bottom: 0;
+        }
+
+        .post-list table {
+            /* 表格行之间的间隙设置为0，宽度设置为100% 字体大小为12px*/
+            border-collapse: collapse;
+            width: 100%;
+            font-size: 14px;
+        }
+
+        .post-list table thead tr td {
+            /* 设置表头行到的背景颜色及高度 */
+            background-color: #eee;
+            height: 40px;
+        }
+        .post-list table thead tr td span{
+            /* 表头左右的span之间分割开，同时设置表头字体的颜色 */
+            margin-left: 16px;
+            color: blue;
+        }
+        .post-list table tr td {
+            /* 设置表格中数据行的高度，只需要下边框 */
+            border-bottom: 1px solid #ccc;
+            height: 40px;
+        }
+        .post-list table tr td span{
+            /* 设置数据行中的sapn分开（图片、帖子种类、帖子标题）的距离 */
+            color: blue;
+            padding-right: 10px;
+        }
+        .post-list table tr td p:last-child{
+            /* 设置作者发表时间为浅色 */
+            color: #999;
+        }
+        
+        .post-page{
+            /* 设置分页栏,居中显示 */
+            text-align: center;
+            margin-bottom: 36px;
+        }
+    </style>
+
+</html>
