@@ -22,6 +22,11 @@ namespace MyBBSWebApi.Controllers
         {
             _logger = logger;
         }
+        
+        //get 数据的获取
+        //post 数据的插入
+        //put 数据的更新
+        //delete 数据的删除
 
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()

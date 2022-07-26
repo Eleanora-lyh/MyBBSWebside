@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\LYH\\myBBS\\MyBBSWebApi\\MyBBSWebApi\\MyBBSWebApi.csproj": {}
+    "D:\\LYH\\myBBS\\MyBBSWebside\\MyBBSWebApi\\MyBBSWebApi\\MyBBSWebApi.csproj": {}
   },
   "projects": {
-    "D:\\LYH\\myBBS\\MyBBSWebApi\\MyBBSWebApi\\MyBBSWebApi.csproj": {
+    "D:\\LYH\\myBBS\\MyBBSWebside\\MyBBSWebApi\\MyBBSWebApi\\MyBBSWebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\LYH\\myBBS\\MyBBSWebApi\\MyBBSWebApi\\MyBBSWebApi.csproj",
+        "projectUniqueName": "D:\\LYH\\myBBS\\MyBBSWebside\\MyBBSWebApi\\MyBBSWebApi\\MyBBSWebApi.csproj",
         "projectName": "MyBBSWebApi",
-        "projectPath": "D:\\LYH\\myBBS\\MyBBSWebApi\\MyBBSWebApi\\MyBBSWebApi.csproj",
+        "projectPath": "D:\\LYH\\myBBS\\MyBBSWebside\\MyBBSWebApi\\MyBBSWebApi\\MyBBSWebApi.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "D:\\LYH\\myBBS\\MyBBSWebApi\\MyBBSWebApi\\obj\\",
+        "outputPath": "D:\\LYH\\myBBS\\MyBBSWebside\\MyBBSWebApi\\MyBBSWebApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -43,6 +43,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.29, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.6.3, )"
