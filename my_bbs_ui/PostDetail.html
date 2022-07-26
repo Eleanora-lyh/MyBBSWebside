@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- elementui 依赖于 vue，所以先引入vue -->
+    <script src="./lib/vue.js"></script>
+    <script src="./lib/elementui.js"></script>
+    <link rel="stylesheet" href="./lib/elementui.css">
+
+    <!-- 引入回帖输入框 -->
+    <script src="./replyContent/utf8-net/ueditor.config.js"></script>
+    <script src="./replyContent/utf8-net/ueditor.all.min.js"></script>
+    <script src="./replyContent/utf8-net/lang/zh-cn/zh-cn.js"></script>
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="postDetail">
+      <div class="sent-reply">
+        <el-button type="primary" size="small">回帖</el-button>
+      </div>
+      <div class="reply-content">
+        <div class="post-title">
+          <div class="left">
+            查看：996 | 回复：1007
+          </div>
+          <div class="right">
+            这是一个帖子标题
+          </div>
+        </div>
+        <ul>
+          <li>
+            <div class="content-item">
+              <div class="left">
+                <div class="user-no">12345678</div>
+                <div class="user-info">
+                  <img src="./assets/images/UserHead.gif" alt="">
+                  <p>LYH</p>
+                  <p>等级:19</p>
+                </div>
+              </div>
+
+              <div class="right">
+                <div class="send-time">
+                  发表于 2021-3-19 23:40
+                </div>
+                <div class="content-detail">
+                  这是内容
+                </div>
+                <div class="content-foot">
+                  <span>回复</span>
+                  <span>顶(1)</span>
+                  <span>踩(0)</span>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="content-item">
+              <div class="left">
+                <div class="user-no">12345678</div>
+                <div class="user-info">
+                  <img src="./assets/images/UserHead.gif" alt="">
+                  <p>LYH</p>
+                  <p>等级:19</p>
+                </div>
+              </div>
+
+              <div class="right">
+                <div class="send-time">
+                  发表于 2021-3-19 23:40
+                </div>
+                <div class="content-detail">
+                  这是内容
+                </div>
+                <div class="content-foot">
+                  <span>回复</span>
+                  <span>顶(1)</span>
+                  <span>踩(0)</span>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="content-item">
+              <div class="left">
+                <div class="user-no">12345678</div>
+                <div class="user-info">
+                  <img src="./assets/images/UserHead.gif" alt="">
+                  <p>LYH</p>
+                  <p>等级:19</p>
+                </div>
+              </div>
+
+              <div class="right">
+                <div class="send-time">
+                  发表于 2021-3-19 23:40
+                </div>
+                <div class="content-detail">
+                  这是内容
+                </div>
+                <div class="content-foot">
+                  <span>回复</span>
+                  <span>顶(1)</span>
+                  <span>踩(0)</span>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="reply-page">
+        <el-pagination background layout="prev, pager, next" :page-size="30" :total="1000"></el-pagination>
+      </div>
+
+      <div class="write-pad">
+        <!-- 必须使用id -->
+        <div id="content"></div>
+        <p>
+          <el-button type="primary" size="small">发送</el-button>
+        </p>
+      </div>
+    </div>
+
+    <script>
+      new Vue({
+        el: "#postDetail",
+        mounted () {
+          var ue = UE.getEditor('content', {
+            initialFrameWidth: '100%'
+          })
+        },
+      })
+    </script>
+    <style>
+      * {
+        /* 内外边距为0，使其贴边显示 */
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      #postDetail {
+        padding: 0 16px;
+        font-size: 14px;
+      }
+
+      .sent-reply {
+        /* 设置回帖按钮容器的高度 */
+        height: 50px;
+        margin-top: 36px;
+      }
+
+      .reply-page {
+        /* 设置回帖分页栏的位置 */
+        text-align: center;
+        margin: 16px 0;
+      }
+
+      .reply-content .post-title {
+        /* 设置回帖表头背景色、高度、上下在42px内居中、字体大小为14、只显示固定长度的下边框 */
+        /* 上下居中使用 line-height = height
+        回帖头部是浅色#E5EDF2;底色是深色的#C2D5E3
+        */
+        background-color: #E5EDF2;
+        height: 42px;
+        line-height: 42px;
+        border-bottom: 6px solid #C2D5E3;
+      }
+
+      .reply-content .post-title .left {
+        /* .post-title中的left向左浮动，right自动分在右边 */
+        width: 200px;
+        float: left;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      .content-item {
+        /* 设置每行的数据栏的背景色 */
+        border-bottom: 6px solid #C2D5E3;
+      }
+
+      .content-item .left {
+        /* 设置内容的左部分向左浮动 */
+        width: 200px;
+        padding-bottom: 6px;
+        background-color: #E5EDF2;
+        float: left;
+      }
+
+      .content-item .left .user-no {
+        /* 设置userno所占高度、上下居中对齐、显示下面的下划线、向右拉开距离 */
+        height: 36px;
+        line-height: 36px;
+        border-bottom: 2px #ccc dashed;
+        padding-left: 16px;
+      }
+
+      .content-item .left .user-info {
+        /* 设置图片下方的字距离图片16px，居左显示 */
+        padding-top: 16px;
+        text-align: center;
+      }
+
+      .content-item .left .user-info img {
+        /* 图片加上边框,固定大小 */
+        border: 6px solid #fff;
+        width: 132px;
+        height: 132px;
+      }
+
+      .content-item .left .user-info p {
+        /* 图片加上边框 */
+        text-align-last: left;
+        padding-left: 34px;
+        font-size: 14px;
+        padding-bottom: 10px;
+      }
+
+      .content-item .right {
+        /* 设置右部分的高度 */
+        min-height: 250px;
+        overflow: hidden;
+        padding: 0 6px;
+      }
+
+      .content-item .right .send-time {
+        /* 添加右半部分时间下面的的虚线 */
+        height: 36px;
+        line-height: 36px;
+        border-bottom: 2px dashed #ccc;
+      }
+
+      .content-item .right .content-detail {
+        /* 内容部分最小高度 */
+        min-height: 180px;
+      }
+
+      .content-item .right .content-foot {
+        /* 右部分的顶踩容器 */
+        height: 36px;
+        line-height: 36px;
+        border-top: 2px dashed #ccc;
+      }
+
+      .content-item .right .content-foot span {
+        /* 每个字分开点 */
+        margin-right: 16px;
+      }
+
+      .write-pad {
+        /* 添加回帖的操作板大小 */
+        width: 90%;
+        margin: auto;
+      }
+
+      .write-pad #content {
+
+        height: 180px;
+      }
+
+      .write-pad p {
+        margin-top: 106px;
+        margin-bottom: 36px;
+      }
+    </style>
+  </body>
+
+</html>

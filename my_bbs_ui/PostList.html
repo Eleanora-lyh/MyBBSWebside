@@ -57,8 +57,8 @@
                             </td>
                             <td style="width: 135px;">
                                 <!-- 使用段落标签使其每个占一行 -->
-                                <p>Ace</p>
-                                <p>2021-3-18 23:00</p>
+                                <p>LYH</p>
+                                <p>2022-7-25 18:00</p>
                             </td>
                             <td style="width: 66px;">
                                 <p>996</p>
@@ -66,7 +66,7 @@
                             </td>
                             <td style="width: 120px;">
                                 <p>Taro</p>
-                                <p> 2021-3-18 23:01</p>
+                                <p> 2022-7-25 19:01</p>
                             </td>
                         </tr>
                         <tr>
@@ -78,8 +78,8 @@
                                 <a href="./PostDetail.html">帖子标题</a>
                             </td>
                             <td style="width: 135px;">
-                                <p>Ace</p>
-                                <p>2021-3-18 23:00</p>
+                                <p>LYH</p>
+                                <p>2022-7-25 18:00</p>
                             </td>
                             <td style="width: 66px;">
                                 <p>996</p>
@@ -87,7 +87,7 @@
                             </td>
                             <td style="width: 120px;">
                                 <p>Taro</p>
-                                <p> 2021-3-18 23:01</p>
+                                <p> 2022-7-25 19:01</p>
                             </td>
                         </tr>
                     </tbody>
@@ -121,7 +121,18 @@
             padding: 0;
             box-sizing: border-box;
         }
-
+        a{
+            /* a标签本身都不带有下划线 */
+            text-decoration: none;
+            color: #333;
+        }
+        a:hover{
+             /* a标签只有悬停的时候才出现下划线 */
+            text-decoration: underline;
+        }
+        a.post-type{
+            color: blue;
+        }
         .header {
             /* 黑边框要显示100% */
             width: 100%;
