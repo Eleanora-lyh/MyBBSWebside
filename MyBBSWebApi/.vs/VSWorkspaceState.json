@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\MyBBSWebApi"
+    "\\MyBBSWebApi",
+    "\\MyBBSWebApi\\Controllers"
   ],
+  "SelectedNode": "\\MyBBSWebApi.sln",
   "PreviewInSolutionExplorer": false
 }

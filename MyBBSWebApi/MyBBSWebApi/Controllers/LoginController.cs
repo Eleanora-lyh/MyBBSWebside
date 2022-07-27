@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MyBBSWebApi.Core;
+using MyBBSWebApi.Dal;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -18,52 +20,45 @@ namespace MyBBSWebApi.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
+
         [HttpGet]
         /*
-         * 获取conn对象
-         */
-        public MySqlConnection GetConn()
-        {
-            //与数据库连接的信息可以使用 MySqlConnectionStringBuilder类简化字符串的拼接
-            MySqlConnectionStringBuilder builder = new MySqlConnectionStringBuilder();
-            builder.UserID = "root";
-            builder.Password = "root";
-            builder.Server = "192.168.0.120";
-            builder.Database = "mybbsdb";
-            builder.Port = 3307;
-            MySqlConnection conn = new MySqlConnection(builder.ConnectionString);
-            Console.WriteLine("数据库连接成功");
-            return conn;
-        }
-        [HttpGet]
-        /*
-         * 获取conn对象
+         * 根据userno、password查询
         */
-        public string Get(string userNo, string password)
+        public string Get(string userno, string password)
         {
-            MySqlConnection conn = GetConn();
-            MySqlCommand cmd = new MySqlCommand("select * from user",conn);
-            MySqlDataAdapter mySqlDataAdapter = new MySqlDataAdapter(cmd);
-            DataSet ds = new DataSet();
-            mySqlDataAdapter.Fill(ds);
-            var res = ds.Tables[0];
-                
-            return res.Rows[0]["user_name"].ToString();
+            UserDal userDal = new UserDal();
+            bool hasUser = userDal.GetUserByNoAndPwd(userno, password);
+            if (hasUser)
+            {
+                return "登陆成功";
+            }
+            else
+            {
+                return "用户名或密码错误";
+            }
         }
         [HttpPost]
-        public string Insert()
+        public int Insert(string userno, string userName, int userLevel, string password)
         {
-            return "lyhhh";
+
+            UserDal userDal = new UserDal();
+            return userDal.AddUser(userno, userName, userLevel, password);
         }
         [HttpPut]
-        public string Update()
+        public string Update(int id, string userNo, string userName, string password, int? userLevel)
         {
-            return "lyhhh";
+            UserDal userDal = new UserDal();
+            int rows = userDal.UpdateUser(id, userNo, userName, password, userLevel);
+            if (rows > 0)
+                return "数据修改成功";
+            else return "数据修改失败";
         }
         [HttpDelete]
-        public string Remove()
+        public int Remove(int id)
         {
-            return "lyhhh";
+            UserDal userDal = new UserDal();
+            return userDal.RemoveUser(id);
         }
     }
 }
