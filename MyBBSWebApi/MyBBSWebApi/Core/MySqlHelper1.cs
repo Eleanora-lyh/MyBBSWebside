@@ -31,5 +31,20 @@ namespace MyBBSWebApi.Core
             cmd.Parameters.AddRange(sqlPram);
             return  cmd.ExecuteNonQuery();
         }
+        public static object ToDbValue(object value)
+        {
+            if (value == null)
+            {
+                return DBNull.Value;
+            }
+            else
+            {
+                return value;
+            }
+        }
+        public static object FromDbValue(object value)
+        {
+            return value == DBNull.Value ? null : value;
+        }
     }
 }

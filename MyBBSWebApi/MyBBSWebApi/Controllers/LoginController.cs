@@ -1,7 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MyBBSWebApi.Bll;
+using MyBBSWebApi.Bll.Interfaces;
 using MyBBSWebApi.Core;
 using MyBBSWebApi.Dal;
+using MyBBSWebApi.Models;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -20,28 +23,31 @@ namespace MyBBSWebApi.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
+        private readonly IUserBll userBll;
 
+        public LoginController(IUserBll userBll)
+        {
+            this.userBll = userBll;
+        }
+        [HttpGet]
+        /*
+         * 查询所有用户信息
+        */
+        public List<User> GetAll()
+        {
+            return userBll().GetAll();
+        }
         [HttpGet]
         /*
          * 根据userno、password查询
         */
-        public string Get(string userno, string password)
+        public User CheckLogin(string userno, string password)
         {
-            UserDal userDal = new UserDal();
-            bool hasUser = userDal.GetUserByNoAndPwd(userno, password);
-            if (hasUser)
-            {
-                return "登陆成功";
-            }
-            else
-            {
-                return "用户名或密码错误";
-            }
+            return userBll.CheckLogin(userno, password); ;
         }
         [HttpPost]
         public int Insert(string userno, string userName, int userLevel, string password)
         {
-
             UserDal userDal = new UserDal();
             return userDal.AddUser(userno, userName, userLevel, password);
         }

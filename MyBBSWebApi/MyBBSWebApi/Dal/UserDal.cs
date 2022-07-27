@@ -11,29 +11,28 @@ namespace MyBBSWebApi.Dal
 {
     public class UserDal
     {
+        public List<User> GetAll()
+        {
+            DataTable dataTable = MySqlHelper1.ExcuteTable("select * from user");
+            List<User> userList = ToModelList(dataTable);
+            return userList;
+        }
         public User GetUserById(int id)
         {
             DataRow row = null;
             DataTable dataTable = MySqlHelper1.ExcuteTable("select * from user where id = @id",
                 new MySqlParameter("@id", id));
             if (dataTable.Rows.Count > 0) row = dataTable.Rows[0];
-            User newUser = new User();
-            newUser.Id = (int)row["id"];
-            newUser.UserName = row["user_name"].ToString();
-            newUser.Password = row["password"].ToString();
-            newUser.UserLevel = (int)row["user_level"];
-            newUser.UserNo = row["user_no"].ToString();
-
+            User newUser = ToModel(row);
             return newUser;
         }
-        public bool GetUserByNoAndPwd(string userno, string password)
+        public List<User> GetUserByNoAndPwd(string userno, string password)
         {
-            DataRow row = null;
-            DataTable dataTable = MySqlHelper1.ExcuteTable("select * from user where userno = @userno and password = @password",
+            DataTable res = MySqlHelper1.ExcuteTable("select * from user where userno = @userno and password = @password",
                 new MySqlParameter("@userno", userno), new MySqlParameter("@password", password)
                 );
-            if (dataTable.Rows.Count > 0) return true;
-            else return false;
+            List<User> userList = ToModelList(res);
+            return userList;
         }
         public int AddUser(string userno, string userName, int userLevel, string password)
         {
@@ -52,12 +51,7 @@ namespace MyBBSWebApi.Dal
             if (res.Rows.Count > 0)
             {
                 DataRow row = res.Rows[0];
-                User user = new User();
-                user.Id = (int)row["Id"];
-                user.UserNo = userNo ?? row["UserNo"].ToString();
-                user.UserName = userName ?? row["UserName"].ToString();
-                user.UserLevel = userLevel ?? (int)row["UserLevel"];
-                user.Password = password ?? row["Password"].ToString();
+                User user = ToModel(row);
                 MySqlHelper1.ExcuteNoneQuery(
                 "update user set userno = @UserNo,user_name = @UserName,user_level=@UserLevel, Password = @Password WHERE Id = @Id",
                  new MySqlParameter("@UserNo", user.UserNo),
@@ -74,6 +68,30 @@ namespace MyBBSWebApi.Dal
             return MySqlHelper1.ExcuteNoneQuery("delete from user where id = @id",
                 new MySqlParameter("@id", id)
                 );
+        }
+        private User ToModel(DataRow row)
+        {
+            User user = new();
+            user.Id = (int)MySqlHelper1.FromDbValue(row["id"]);
+            user.UserNo = MySqlHelper1.FromDbValue(row["userno"]).ToString();
+            user.UserName = MySqlHelper1.FromDbValue(row["user_name"]).ToString();
+            user.UserLevel = (int)MySqlHelper1.FromDbValue(row["user_level"]);
+            user.Password = MySqlHelper1.FromDbValue(row["password"]).ToString();
+            user.IsDelete = (bool)row["is_delete"];
+            /*     user.Token = (Guid?)MySqlHelper1.FromDbValue(row["Token"]);
+                 user.AutoLoginTag = (Guid?)MySqlHelper1.FromDbValue(row["AutoLoginTag"]);
+                 user.AutoLoginLimitTime = (DateTime?)MySqlHelper1.FromDbValue(row["AutoLoginLimitTime"]);*/
+            return user;
+        }
+        private List<User> ToModelList(DataTable dataTable)
+        {
+            List<User> userList = new();
+            for (int i = 0; i < dataTable.Rows.Count; i++)
+            {
+                DataRow row = dataTable.Rows[i];
+                userList.Add(ToModel(row));
+            }
+            return userList;
         }
     }
 }
