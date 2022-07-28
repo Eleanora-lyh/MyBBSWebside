@@ -1,0 +1,12 @@
+D:\LYH\myBBS\MyBBSWebside\MyBBSWebApi\MyBBSWebApi.Models\bin\Debug\net5.0\MyBBSWebApi.Models.deps.json
+D:\LYH\myBBS\MyBBSWebside\MyBBSWebApi\MyBBSWebApi.Models\bin\Debug\net5.0\MyBBSWebApi.Models.dll
+D:\LYH\myBBS\MyBBSWebside\MyBBSWebApi\MyBBSWebApi.Models\bin\Debug\net5.0\ref\MyBBSWebApi.Models.dll
+D:\LYH\myBBS\MyBBSWebside\MyBBSWebApi\MyBBSWebApi.Models\bin\Debug\net5.0\MyBBSWebApi.Models.pdb
+D:\LYH\myBBS\MyBBSWebside\MyBBSWebApi\MyBBSWebApi.Models\obj\Debug\net5.0\MyBBSWebApi.Models.csproj.AssemblyReference.cache
+D:\LYH\myBBS\MyBBSWebside\MyBBSWebApi\MyBBSWebApi.Models\obj\Debug\net5.0\MyBBSWebApi.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\LYH\myBBS\MyBBSWebside\MyBBSWebApi\MyBBSWebApi.Models\obj\Debug\net5.0\MyBBSWebApi.Models.AssemblyInfoInputs.cache
+D:\LYH\myBBS\MyBBSWebside\MyBBSWebApi\MyBBSWebApi.Models\obj\Debug\net5.0\MyBBSWebApi.Models.AssemblyInfo.cs
+D:\LYH\myBBS\MyBBSWebside\MyBBSWebApi\MyBBSWebApi.Models\obj\Debug\net5.0\MyBBSWebApi.Models.csproj.CoreCompileInputs.cache
+D:\LYH\myBBS\MyBBSWebside\MyBBSWebApi\MyBBSWebApi.Models\obj\Debug\net5.0\MyBBSWebApi.Models.dll
+D:\LYH\myBBS\MyBBSWebside\MyBBSWebApi\MyBBSWebApi.Models\obj\Debug\net5.0\ref\MyBBSWebApi.Models.dll
+D:\LYH\myBBS\MyBBSWebside\MyBBSWebApi\MyBBSWebApi.Models\obj\Debug\net5.0\MyBBSWebApi.Models.pdb

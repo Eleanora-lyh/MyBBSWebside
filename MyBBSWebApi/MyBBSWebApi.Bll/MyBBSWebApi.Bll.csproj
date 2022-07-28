@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MyBBSWebApi.Dal\MyBBSWebApi.Dal.csproj" />
+    <ProjectReference Include="..\MyBBSWebApi.Models\MyBBSWebApi.Models.csproj" />
+  </ItemGroup>
+
+</Project>

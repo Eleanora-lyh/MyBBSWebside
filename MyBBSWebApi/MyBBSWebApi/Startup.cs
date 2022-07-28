@@ -7,7 +7,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using MyBBSWebApi.Bll;
-using MyBBSWebApi.Bll.Interfaces;
+using MyBBSWebApi.Dal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +30,7 @@ namespace MyBBSWebApi
         {
             //将UserBll的实例注入到IUserBll中
             services.AddSingleton<IUserBll,UserBll>();
+            services.AddSingleton<UserDal, UserDal>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

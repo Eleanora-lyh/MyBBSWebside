@@ -1,0 +1,15 @@
+D:\LYH\myBBS\MyBBSWebside\MyBBSWebApi\MyBBSWebApi.Dal\bin\Debug\net5.0\MyBBSWebApi.Dal.deps.json
+D:\LYH\myBBS\MyBBSWebside\MyBBSWebApi\MyBBSWebApi.Dal\bin\Debug\net5.0\MyBBSWebApi.Dal.dll
+D:\LYH\myBBS\MyBBSWebside\MyBBSWebApi\MyBBSWebApi.Dal\bin\Debug\net5.0\ref\MyBBSWebApi.Dal.dll
+D:\LYH\myBBS\MyBBSWebside\MyBBSWebApi\MyBBSWebApi.Dal\bin\Debug\net5.0\MyBBSWebApi.Dal.pdb
+D:\LYH\myBBS\MyBBSWebside\MyBBSWebApi\MyBBSWebApi.Dal\bin\Debug\net5.0\MyBBSWebApi.Models.dll
+D:\LYH\myBBS\MyBBSWebside\MyBBSWebApi\MyBBSWebApi.Dal\bin\Debug\net5.0\MyBBSWebApi.Models.pdb
+D:\LYH\myBBS\MyBBSWebside\MyBBSWebApi\MyBBSWebApi.Dal\obj\Debug\net5.0\MyBBSWebApi.Dal.csproj.AssemblyReference.cache
+D:\LYH\myBBS\MyBBSWebside\MyBBSWebApi\MyBBSWebApi.Dal\obj\Debug\net5.0\MyBBSWebApi.Dal.GeneratedMSBuildEditorConfig.editorconfig
+D:\LYH\myBBS\MyBBSWebside\MyBBSWebApi\MyBBSWebApi.Dal\obj\Debug\net5.0\MyBBSWebApi.Dal.AssemblyInfoInputs.cache
+D:\LYH\myBBS\MyBBSWebside\MyBBSWebApi\MyBBSWebApi.Dal\obj\Debug\net5.0\MyBBSWebApi.Dal.AssemblyInfo.cs
+D:\LYH\myBBS\MyBBSWebside\MyBBSWebApi\MyBBSWebApi.Dal\obj\Debug\net5.0\MyBBSWebApi.Dal.csproj.CoreCompileInputs.cache
+D:\LYH\myBBS\MyBBSWebside\MyBBSWebApi\MyBBSWebApi.Dal\obj\Debug\net5.0\MyBBSWebApi.Dal.csproj.CopyComplete
+D:\LYH\myBBS\MyBBSWebside\MyBBSWebApi\MyBBSWebApi.Dal\obj\Debug\net5.0\MyBBSWebApi.Dal.dll
+D:\LYH\myBBS\MyBBSWebside\MyBBSWebApi\MyBBSWebApi.Dal\obj\Debug\net5.0\ref\MyBBSWebApi.Dal.dll
+D:\LYH\myBBS\MyBBSWebside\MyBBSWebApi\MyBBSWebApi.Dal\obj\Debug\net5.0\MyBBSWebApi.Dal.pdb

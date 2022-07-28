@@ -9,4 +9,9 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MyBBSWebApi.Bll\MyBBSWebApi.Bll.csproj" />
+    <ProjectReference Include="..\MyBBSWebApi.Models\MyBBSWebApi.Models.csproj" />
+  </ItemGroup>
+
 </Project>
